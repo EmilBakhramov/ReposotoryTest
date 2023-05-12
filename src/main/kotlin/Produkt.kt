@@ -3,8 +3,16 @@ open class Produkt( var produktName: String,  var produktPreis: Int) {
         println(produktName)
     }
 
+    open var produktListe: MutableList<Produkt> = mutableListOf()
+
     open fun produkteAnzeige() {
-        println("$produktName, Preis: $produktPreis")
+        for (produkte in produktListe) {
+            //produktListe.add(produkte)
+
+
+            println("$produktName, Preis: $produktPreis")
+        }
+
     }
 
 }

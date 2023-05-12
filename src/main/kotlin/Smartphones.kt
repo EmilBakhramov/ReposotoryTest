@@ -1,3 +1,7 @@
-//class Smartphones(smartPhoneNameList: MutableList<String>, smartPhonePreisList: MutableList<Double> ): Elektrogerat(smartPhoneNameList, smartPhonePreisList) {
+open class Smartphones( ModellBezeichnung: String, Preis: Int, Speicher: Int  ): Elektrogerat(ModellBezeichnung, Preis, Speicher ){
 
-//}
+
+
+}
+
+
