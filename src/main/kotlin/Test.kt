@@ -2,8 +2,6 @@ fun test() {
 
         angeboteAufruf()
 
-
-
         hauptmenu()
 
 

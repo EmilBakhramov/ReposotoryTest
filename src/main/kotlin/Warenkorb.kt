@@ -25,9 +25,9 @@ open class Warenkorb {
         }
 
         var itemWahl = readln().toInt()
-        for (items in artikel){
-        artikel.add(item)
-        warenKorbAnzeigen()
+        for (items in artikel) {
+            artikel.add(item)
+            warenKorbAnzeigen()
 
         }
     }
@@ -56,7 +56,6 @@ open class Warenkorb {
             kaufAbschliessen()
         }
     }
-
 
 
     open fun kaufAbschliessen() {
@@ -92,7 +91,9 @@ open class Warenkorb {
         } else {
             warenKorbAnzeigen()
         }
-    }private fun erstelleRechnung(): String {
+    }
+
+    private fun erstelleRechnung(): String {
         val rechnungsnummer = UUID.randomUUID().toString()
         val gesamtsumme = zwischenSumme()
 
