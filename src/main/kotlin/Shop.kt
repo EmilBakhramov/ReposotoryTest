@@ -116,13 +116,12 @@ var kundenListe: MutableList<Kunde> = mutableListOf(kundeDef)
         }
 
 /**
- * Methode LogIn
+ * Methode fuer den LogIn
  */
         fun logIn() {
             try {
                 print("Benutzername: ")
                 var username = readLine()!!
-
 
                 val console: Console? = System.console()
                 if (console != null) {
@@ -135,11 +134,11 @@ var kundenListe: MutableList<Kunde> = mutableListOf(kundeDef)
                     println("Your password is: $maskedPassword")
                 } else {
                     println("No console available")
-                }/*
+                }
                 print("Passwort: ")
                 console?.let {
+                }
 
-*/
                     var password = readLine()!!
 
                     for (kunden in kundenListe) {
@@ -177,7 +176,7 @@ var kundenListe: MutableList<Kunde> = mutableListOf(kundeDef)
             }
             if (eingabe == "1") {
                 //Funktionsaufruf
-                var korb = Warenkorb()
+                Warenkorb()
 
                 logInBereich()
             } else if (eingabe == "2") {
@@ -195,8 +194,14 @@ var kundenListe: MutableList<Kunde> = mutableListOf(kundeDef)
                 test()
                 logInBereich()
             } else if (eingabe == "q") {
-                logOut()
-                hauptmenu()
+                println("Möchten Sie sich wirklich ausloggen? Zum bestätigen -Enter- | für Abbruch -n-")
+                var bestaetigung = readln()
+                if (bestaetigung == "") {
+                    logOut()
+                    hauptmenu()
+                }else if (bestaetigung == "n"){
+                    logInBereich()
+                }
             }
         }
 
@@ -239,6 +244,7 @@ var kundenListe: MutableList<Kunde> = mutableListOf(kundeDef)
 
                 println("[" + "$i" + "]->" + "   ${produkte.produktName}        statt      ${produkte.produktPreis}       für nur $sonderpreis €!")
             }
+            logInBereich()
         }
 
 
@@ -304,11 +310,11 @@ var kundenListe: MutableList<Kunde> = mutableListOf(kundeDef)
 
             }else if (eingabe == "6"){
                 println("""
-                "iPhone        Angebot! aktuell statt      289       für nur:    260 €!"
+                "iPhone        Angebot! aktuell statt      289       für nur:    260* €!"
                 |   Speicher:   erweiterbar       |   RAM:   |   
                 |   254 GB          ja            |   16 GB  |
                         
-                  
+                *einmalig, danach 24,00€ monatlich
                     )
             """.trimIndent())
             }
